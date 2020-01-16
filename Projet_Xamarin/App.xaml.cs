@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using Xamarin.Essentials;
 
 namespace Projet_Xamarin
 {
@@ -18,9 +19,11 @@ namespace Projet_Xamarin
         public App()
         {
             InitializeComponent();
-
+            //Preferences.Clear();
             DependencyService.Register<MockDataStore>();
-            MainPage = new Page1();
+            MainPage = new MainPage();
+
+            //MainPage = new NavigationPage(new Page1());
         }
         
         protected override void OnStart()

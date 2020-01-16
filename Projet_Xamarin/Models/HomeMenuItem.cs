@@ -6,8 +6,8 @@ namespace Projet_Xamarin.Models
 {
     public enum MenuItemType
     {
-        Browse,
-        About
+        Messages,
+        Favoris
     }
     public class HomeMenuItem
     {

@@ -6,7 +6,6 @@ C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
-C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
@@ -17,3 +16,5 @@ C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Projet_Xamarin.pdb
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\Page1.xaml.g.cs
+C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\MessageContent.xaml.g.cs
+C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\obj\Debug\netstandard2.0\Views\favoris.xaml.g.cs

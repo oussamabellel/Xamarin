@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Projet_Xamarin.Views.MessageContent">
+    
+    <StackLayout Spacing="20" Padding="15">
+
+        <Label Text="Message details" FontSize="Large" />
+
+        <Label Text= "{Binding message.student_id, StringFormat='Student ID : {0}'}" FontSize="Small" />
+        <Label Text= "{Binding message.gps_lat, StringFormat='gps_lat : {0}'}" FontSize="Small" />
+        <Label Text= "{Binding message.gps_long, StringFormat='gps_long : {0}'}" FontSize="Small" />
+        <Label Text= "{Binding message.student_message, StringFormat='Student Message : {0}'}" FontSize="Small" />
+        
+        <Label Text="User Messages" FontSize="Large" />
+        
+        <ListView x:Name="myListView" ItemsSource="{Binding liste}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding student_message}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+    
+    
+</ContentPage>

@@ -6,18 +6,50 @@
              mc:Ignorable="d"
              x:Class="Projet_Xamarin.Views.Page1">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="myListView" ItemsSource="{Binding Messages}">
+        <StackLayout Orientation="Vertical" >
+            <ListView x:Name="favorisListView" ItemsSource="{Binding Favoris}" HasUnevenRows="True" HeightRequest="200" ItemTapped="myListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding student_message}" />
-                            </StackLayout>
+                            <Grid BackgroundColor="LightGray">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding student_message}" LineBreakMode="TailTruncation" />
+                                <Button Text="Delete" Clicked="Button_Clicked_2" Grid.Column="1" CommandParameter="{Binding .}" BackgroundColor="Red"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <ListView x:Name="myListView" ItemsSource="{Binding Messages}" ItemTapped="myListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <BoxView Color="{Binding color}" />
+                                <Label Text="{Binding student_message}" LineBreakMode="TailTruncation" />
+                                <Button Text="Favoris" BackgroundColor="Green" Grid.Column="1" Clicked="Button_Clicked_1Async" CommandParameter="{Binding .}" />
+                                <Button Text="Add Color" Grid.Column="2" CommandParameter="{Binding .}" Clicked="Button_Clicked_1" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        <Button Text="Refresh" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
