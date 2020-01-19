@@ -27,6 +27,7 @@ namespace Projet_Xamarin.Views
         public Page1()
         {
             InitializeComponent();
+            
             Favoris = new List<Message>();
             Messages = new List<Message>();
             Pairs = new Dictionary<int, string>();
@@ -42,8 +43,12 @@ namespace Projet_Xamarin.Views
 
         public void RefreshFavoris()
         {
-            Favoris = JsonConvert.DeserializeObject<List<Message>>(Preferences.Get("favoris", null));
-            favorisListView.ItemsSource = Favoris;
+            if (Preferences.ContainsKey("favoris"))
+            {
+                Favoris = JsonConvert.DeserializeObject<List<Message>>(Preferences.Get("favoris", null));
+                favorisListView.ItemsSource = Favoris;
+            }
+          
         }
 
         public async Task AutoRefresh()
@@ -159,14 +164,17 @@ namespace Projet_Xamarin.Views
 
         private async void Refresh()
         {
-            Dictionary<int,string> Colors = JsonConvert.DeserializeObject<Dictionary<int,string>>(Preferences.Get("Colors", null));
+            Dictionary<int, string> Colors = new Dictionary<int, string>();
 
-
+            if (Preferences.ContainsKey("Colors"))
+            {
+                Colors = JsonConvert.DeserializeObject<Dictionary<int,string>>(Preferences.Get("Colors", null));
+            }
             using (var client = new HttpClient())
             {
                 var content = await client.GetStringAsync("https://hmin309-embedded-systems.herokuapp.com/message-exchange/messages/");
                 List<Message> liste = JsonConvert.DeserializeObject<List<Message>>(content);
-                foreach(Message m in liste)
+                foreach (Message m in liste)
                 {
                     foreach (var item in Colors)
                     {

@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Projet_Xamarin.Services;
 using Projet_Xamarin.Views;
 using Projet_Xamarin.Models;
 using System.Collections.Generic;
@@ -19,10 +18,7 @@ namespace Projet_Xamarin
         public App()
         {
             InitializeComponent();
-            //Preferences.Clear();
-            DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
-
             //MainPage = new NavigationPage(new Page1());
         }
         
