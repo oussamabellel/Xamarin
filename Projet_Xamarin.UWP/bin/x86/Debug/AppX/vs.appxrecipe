@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-01-19T15:31:38.518</Modified>
+      <Modified>2020-01-24T00:04:43.861</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin.UWP\bin\x86\Debug\Projet_Xamarin.UWP.exe">
       <PackagePath>entrypoint\Projet_Xamarin.UWP.exe</PackagePath>
-      <Modified>2020-01-19T15:31:34.369</Modified>
+      <Modified>2020-01-24T00:04:41.916</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\UNITECH\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -724,7 +724,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin\bin\Debug\netstandard2.0\Projet_Xamarin.dll">
       <PackagePath>Projet_Xamarin.dll</PackagePath>
-      <Modified>2020-01-19T15:31:08.723</Modified>
+      <Modified>2020-01-24T00:04:28.492</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -895,11 +895,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-01-19T15:31:33.813</Modified>
+      <Modified>2020-01-24T00:04:41.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-01-19T15:31:33.814</Modified>
+      <Modified>2020-01-24T00:04:41.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -915,7 +915,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\UNITECH\Documents\Projet_Xamarin\Projet_Xamarin.UWP\bin\x86\Debug\Core\Projet_Xamarin.UWP.exe">
       <PackagePath>Projet_Xamarin.UWP.exe</PackagePath>
-      <Modified>2020-01-19T15:31:38.505</Modified>
+      <Modified>2020-01-24T00:04:43.851</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

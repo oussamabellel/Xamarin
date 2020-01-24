@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Projet_Xamarin.Models
 {
-    public class Message : INotifyPropertyChanged
+    public class Message
     {
         public int id { get; set; }
         public int student_id { get; set; }
@@ -14,6 +14,5 @@ namespace Projet_Xamarin.Models
         public string student_message { get; set; }
         public string color { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

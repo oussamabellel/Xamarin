@@ -27,18 +27,17 @@ namespace Projet_Xamarin.Views
         public Page1()
         {
             InitializeComponent();
-            
             Favoris = new List<Message>();
             Messages = new List<Message>();
             Pairs = new Dictionary<int, string>();
-            //getMessages();
-            Debug.WriteLine(Messages.Count);
-            //myListView.ItemsSource = Messages;
-
-            //AssignColor();
             Refresh();
-            AutoRefresh();
+            _ = AutoRefresh();
             RefreshFavoris();
+            myListView.RefreshCommand = new Command(() => {
+                //Do your stuff.
+                Refresh();
+                myListView.IsRefreshing = false;
+            });
         }
 
         public void RefreshFavoris()
@@ -47,8 +46,20 @@ namespace Projet_Xamarin.Views
             {
                 Favoris = JsonConvert.DeserializeObject<List<Message>>(Preferences.Get("favoris", null));
                 favorisListView.ItemsSource = Favoris;
+                favorisListView.HeightRequest = (Favoris.Count * 100)/2;
+                favorisListView.IsVisible = true;
+
+            }else
+            {
+                Debug.WriteLine("Empty");
+                favorisListView.IsVisible = false;
             }
-          
+
+            if(Favoris.Count == 0)
+            {
+                favorisListView.IsVisible = false;
+
+            }
         }
 
         public async Task AutoRefresh()
@@ -100,11 +111,12 @@ namespace Projet_Xamarin.Views
             Refresh();
             
         }
-        
-        public async Task<bool> verifyIfExistAsync(Message msg)
+
+        public bool verifyIfExist(Message msg)
         {
             bool b = false;
-           foreach(Message m in Favoris) {
+            foreach (Message m in Favoris)
+            {
                 if (m.id == msg.id)
                 {
                     Debug.WriteLine("Exist");
@@ -118,7 +130,7 @@ namespace Projet_Xamarin.Views
         {
             Button button = (Button)sender;
             Message msg = (Message)button.CommandParameter;
-            if (! await verifyIfExistAsync(msg))
+            if (! verifyIfExist(msg))
             {
                 Favoris.Add(msg);
                 string json = JsonConvert.SerializeObject(Favoris);
@@ -137,13 +149,6 @@ namespace Projet_Xamarin.Views
             Preferences.Set("favoris", json);
             RefreshFavoris();
         }
-
-       /* void UpdateListView(ListView listView)
-        {
-            var itemsSource = listView.ItemsSource;
-            listView.ItemsSource = null;
-            listView.ItemsSource = itemsSource;
-        }*/
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
@@ -186,6 +191,13 @@ namespace Projet_Xamarin.Views
                 }
                 myListView.ItemsSource = liste;
             }
+        }
+
+        private async void favorisListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var message = (Message) favorisListView.SelectedItem;
+            List<Message> liste = await GetUserMessages(message.student_id);
+            await Navigation.PushAsync(new MessageContent(message, liste));
         }
     }
 }
